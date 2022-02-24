@@ -1,56 +1,30 @@
 PROGRAM SarahRevere(INPUT, OUTPUT);
-  {ѕечать сообщени€ о том как идут британцы,
-   в зависимости от того,первым во входе встречаетс€
-  'land' или 'sea'.}
+{ѕечать соответствующего сообщени€, завис€щего от величины
+ на входе:  '...by land' дл€ 1 и '...by sea' дл€ 2
+ иначе печать сообщени€ об ошибке}
 USES
   DOS;
 VAR
-  W1, W2, W3, W4, Looking: CHAR;
+  Lanterns: STRING;
   Str: STRING;
-  I: INTEGER;
-BEGIN {SarahRevere}
-  {инициализаци€ W1,W2,W3,W4,Looking}
+BEGIN {PaulRevere}
+  {Read Lanterns}
   Str := GetEnv('QUERY_STRING');
+  IF Pos('lanterns=', Str) >= 1
+  THEN
+    Lanterns := COPY(Str, Pos('lanterns=', Str) + 9, Pos('lanterns=', Str) + 9);
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  W1 := ' ';
-  W2 := ' ';
-  W3 := ' ';
-  W4 := ' ';
-  I := 1;
-  Looking := 'Y';
-  WHILE Looking = 'Y'
-  DO
-    BEGIN
-      { ƒвигать окно,провер€ть конец данных}
-      W1 := W2;
-      W2 := W3;
-      W3 := W4;
-      W4 := Str[I];
-      I := I + 1;
-      IF W4 = '&'
-      THEN { онец данных}
-        Looking := 'N';
-      { ѕроверка окна дл€  'land'}
-      IF (W1 = 'l') AND (W2 = 'a') AND (W3 = 'n') AND (W4 = 'd')
-      THEN{'land' найдено}
-        Looking := 'L';
-      { ѕроверка окна дл€ 'sea'}
-      IF (W2 = 's') AND (W3 = 'e') AND (W4 = 'a')
-      THEN{'sea' найдено}
-        Looking := 'S'
-    END;
-  {создать сообщение Sarah}
-  IF Looking = 'L'
+  {Issue Paul Revere's message}
+  IF Lanterns = '1'
   THEN
     WRITELN('The British are coming by land.')
   ELSE
-    IF Looking = 'S'
+    IF Lanterns = '2'
     THEN
-      WRITELN('The British coming by sea.')
+      WRITELN('The British are coming by sea.')
     ELSE
-      WRITELN('Sarah didn''t say')
-END. {Sarah revere}
-
+      WRITELN('The North Church shows only ''',Lanterns, '''.')
+END. {PaulRevere}
 
 

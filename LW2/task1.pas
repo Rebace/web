@@ -3,11 +3,11 @@ USES
   DOS;
 BEGIN
   // http://localhost:4001/cgi-bin/task1.cgi/?name=ivan
-  WRITELN(â€Content-Type: text/plainâ€);
+  WRITELN('Content-Type: text/plain');
   WRITELN;
-  WRITELN(â€REQUEST_METHOD : â€, GetEnv(â€REQUEST_METHODâ€));
-  WRITELN(â€QUERY_STRING   : â€, GetEnv(â€QUERY_STRINGâ€));
-  WRITELN(â€CONTENT_LENGTH : â€, GetEnv(â€CONTENT_LENGTHâ€));
-  WRITELN(â€HTTP_USER_AGENT: â€, GetEnv(â€HTTP_USER_AGENTâ€));
-  WRITELN(â€HTTP_HOST      : â€, GetEnv(â€HTTP_HOSTâ€));
+  WRITELN('REQUEST_METHOD : ', GetEnv('REQUEST_METHOD'));
+  WRITELN('QUERY_STRING   : ', GetEnv('QUERY_STRING'));
+  WRITELN('CONTENT_LENGTH : ', GetEnv('CONTENT_LENGTH'));
+  WRITELN('HTTP_USER_AGENT: ', GetEnv('HTTP_USER_AGENT'));
+  WRITELN('HTTP_HOST      : ', GetEnv('HTTP_HOST'));
 END.
