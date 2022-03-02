@@ -1,6 +1,6 @@
 <?php
 
-header("Content-Type: text/plain");
-echo 'y';
+if (!(empty($_GET['text'])))
+    echo $_GET['text'];
 
 ?>
