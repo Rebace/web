@@ -3,23 +3,25 @@ USES
   DOS;
   // http://localhost:4001/cgi-bin/task3.cgi/?name=Michail
 VAR
-  NAME: STRING;
-  INDEX: INTEGER;
+  Name, Str: STRING;
+  Index, I: INTEGER;
 BEGIN {Hello}
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  NAME := GetEnv('QUERY_STRING');
-  IF POS('name', NAME) >= 1
+  Str := GetEnv('QUERY_STRING');
+  Index := POS('name=', Str);
+  IF Index >= 1
   THEN
-    BEGIN
-      INDEX := POS('=', NAME);
-      NAME := COPY(NAME, INDEX + 1, Length(NAME) - INDEX + 1);
-      IF Length(NAME) < 1
+    FOR I := Index+5 TO LENGTH(Str)
+    DO
+      IF Str[i] <> '&'
       THEN
-        WRITELN('Hello Anonymous!')
+        Name := Name + Str[i]
       ELSE
-        WRITELN('Hello dear, ', NAME, ' !')
-    END
-    ELSE
-      WRITELN('Not found name!')
+        BREAK;
+  IF Name = ''
+  THEN
+    WRITELN('Hello Anonymous!')
+  ELSE
+    WRITELN('Hello dear, ', Name, ' !')
 END. {Hello}

@@ -5,11 +5,24 @@ USES
 
 FUNCTION GetQueryStringParameter(Key: STRING): STRING;
 VAR
-  Str: STRING;
+  Str, Parameter: STRING;
+  Index: INTEGER;
 BEGIN
   Str := GetEnv('QUERY_STRING');
-  Str := Copy(Str, POS(Key, Str) + length(Key) + 1, Length(Str));
-  GetQueryStringParameter := COPY(Str, 1, POS('&', Str) - 1)
+  Index := POS(Key + '=', Str);
+  IF Index < 1
+  THEN
+    Parameter := 'Null'
+  ELSE
+    BEGIN
+      Str := Copy(Str, Index + length(Key) + 1, Length(Str));
+      IF POS('&', Str) < 1
+      THEN
+        Parameter := COPY(Str, 1, Length(Str))
+      ELSE
+        Parameter := COPY(Str, 1, POS('&', Str) - 1)
+    END;
+  GetQueryStringParameter := Parameter
 END;
 
 BEGIN {Hello}
