@@ -1,24 +1,17 @@
 <?php
 
-if (!(empty($_GET['first_name'])))
-    $firstName = $_GET['first_name'];
-else
-    $firstName = ""; 
+function getGetParameter($name)
+{
+    return isset($_GET[$name]) ? $_GET["$name"] : null;
+}
 
-if (!(empty($_GET['last_name'])))
-    $lastname = $_GET['last_name'];
-else
-    $lastname = ""; 
+$firstName = getGetParameter('first_name');
+$lastname = getGetParameter('last_name');
+$email = getGetParameter('email');
+$age = getGetParameter('age');
 
-if (!(empty($_GET['email'])))
-    $email = $_GET['email'];
-else
-    return;
-
-if (!(empty($_GET['age'])))
-    $age = $_GET['age'];
-else
-    $age = ""; 
+if (empty($email))
+	return;
 
 $file = "data/" . $email . ".txt";
 

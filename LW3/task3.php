@@ -1,14 +1,18 @@
 <?php
 
-if (empty($_GET['password']))
+function getGetParameter($name): ?string
 {
-    return;
+    return isset($_GET[$name]) ? $_GET["$name"] : null;
 }
 
-$password = $_GET['password'];
+$password = getGetParameter('password');
+
 $length = strlen($password);
 $reliability = 0;
 $n = 0;
+
+if ($length < 1)
+    return;
 
 if (!(ctype_alnum($password)))
     echo "The string $password is not a password";

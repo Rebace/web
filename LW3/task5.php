@@ -1,9 +1,14 @@
 <?php
 
-if (!(empty($_GET['email'])))
-    $email = $_GET['email'];
-else
-    return;
+function getGetParameter($name)
+{
+    return isset($_GET[$name]) ? $_GET["$name"] : null;
+}
+
+$email = getGetParameter('email');
+
+if (empty($email))
+	return;
 
 $file = "data/" . $email . ".txt";
 if ((!(empty($email))) and (file_exists($file)))
