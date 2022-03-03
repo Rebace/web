@@ -23,46 +23,30 @@ else
     $n = 0;
 
     for ($i = 0; $i < $length; $i++)  //символы в верхнем регистре
-    {
         if (ctype_upper($password[$i])) 
-        {
             $n++;			
-        }
-    }
+
     if ($n != 0) 
-    {
         $reliability += ($length - $n)*2;
-    }
     $n = 0;
 
     for ($i = 0; $i < $length; $i++) //символы в нижнем регистре
-    {
         if (ctype_lower($password[$i])) 
-        {
             $n++;	
-        }
-    }
+
     if ($n != 0) 
-    {
         $reliability += ($length - $n)*2;
-    }
     $n = 0;
 
     if (ctype_alpha($password)) //если пароль только из букв
-    {
         $reliability -= $length;			
-    }
+
     if (ctype_digit($password)) //если пароль только из цифр
-    {
         $reliability -= $length;			
-    }
+
     $result = count_chars($password); //возвращает информацию о символах используемых в пароле
     foreach ($result as $val) 
-    {
         if ($val > 1) 
-        {
             $reliability -= $val;
-        }
-    }	
     echo "The reliability of your password $reliability";
 }
