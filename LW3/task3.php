@@ -29,7 +29,6 @@ else
     for ($i = 0; $i < $length; $i++)  //символы в верхнем регистре
         if (ctype_upper($password[$i])) 
             $n++;			
-
     if ($n != 0) 
         $reliability += ($length - $n)*2;
     $n = 0;
@@ -37,7 +36,6 @@ else
     for ($i = 0; $i < $length; $i++) //символы в нижнем регистре
         if (ctype_lower($password[$i])) 
             $n++;	
-
     if ($n != 0) 
         $reliability += ($length - $n)*2;
     $n = 0;
