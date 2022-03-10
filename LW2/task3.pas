@@ -12,7 +12,7 @@ BEGIN {Hello}
   Index := POS('name=', Str);
   IF Index >= 1
   THEN
-    FOR I := Index+5 TO LENGTH(Str)
+    FOR I := Index + 5 TO LENGTH(Str)
     DO
       IF Str[i] <> '&'
       THEN
