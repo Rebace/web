@@ -1,0 +1,21 @@
+.header-logo
+{
+    max-width: 203px;
+}
+.header-top nav
+{
+    font: normal 16px/500 'Montserrat';
+    line-height: 20px;
+}
+.header-button
+{
+    width: 167px;
+    height: 17px;
+    padding: 19px 40px;
+    background: #000;
+    line-height: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 4.59px;
+    text-align: center;
+    color: #fff;
+}
