@@ -1,6 +1,6 @@
 <div class="main__questionnaire">
     <img class="questionnaire__image" src="img/welcome.png" alt="Астронафт">
-    <form action="http://localhost:8080/UserSurvey.php" method="post">
+    <form action="UserSurvey.php" method="post">
         <p class="form__headline">Записаться на курс</p>
         <input class="form__name form-cell" type="text" placeholder="Ваше имя"  name="first_name"><br>
         <input class="form__email form-cell" type="email" placeholder="Email" name="email"><br>

@@ -106,7 +106,7 @@ body
     margin: 0 0 22px 0;
 }
 
-.extra
+.text-collor
 {
     color: #ee57b7;
 }
@@ -415,55 +415,54 @@ body
 @media all and (max-width: 1476px)
 {
     .main__blog,
-   .blog__info
-   {
+    .blog__info
+    {
        flex-direction: column;
        align-items: center;
        position:static;
        text-align: center;
-   } 
+    } 
 } 
 
 @media all and (max-width: 1199px) 
 {
-   .row__panel,
-   .main__deadline
-   {
+    .row__panel,
+    .main__deadline
+    {
        flex-direction: column;
        align-items: center;
        position:static;
        text-align: center;
-   } 
+    } 
 
-   .row__panel
-   {
-       margin: 15px 0;
-   }
+    .row__panel
+    {
+       margin: 20px 0;
+    }
 
-   .deadline__subtitle
-   {
+    .row__column:nth-child(1),
+    .row__column:nth-child(2),
+    .row__column:nth-child(3)
+    {
+       position: static;
+    }
+ 
+    .deadline__subtitle
+    {
        max-width: 650px;
        width: 100%;
-   }
-
-   .main__deadline:nth-child(1)
-    {
-        margin: 0;
     }
 
-    .main__deadline:nth-child(1) .deadline__info
-    {
-        margin: 0;
-    }
-
-    .main__deadline:nth-child(2)
+    .main__deadline:nth-child(1),
+    .main__deadline:nth-child(1) .deadline__info,
+    .main__deadline:nth-child(2),
+    .main__deadline:nth-child(2) .deadline__info
     {
         margin: 0;
     }
 
     .main__deadline:nth-child(2) .deadline__info
     {
-        margin: 0;
         order: 2;
     }
 }
@@ -502,6 +501,13 @@ body
     .blog__subtitle
     {
         width: 90%;
+    }
+
+    .row__column:nth-child(1) .column__img,
+    .row__column:nth-child(2) .column__img,
+    .row__column:nth-child(3) .column__img
+    {
+        margin: 0 20px 0 0;
     }
 
     .column__info

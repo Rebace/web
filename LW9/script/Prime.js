@@ -1,8 +1,8 @@
-function isPrimeNumber(num) {
+function isPrimeNumber(num) { //value-название переменной сделать
     if (typeof num === 'number') {
         isSinglePrime(num); 
     } else if (Array.isArray(num)) {
-        for (let i = 0; i < num.length; i++) {
+        for (let i = 0; i < num.length; i++) { //foreach
             if (typeof num[i] === 'number') {
                 isSinglePrime(num[i]);
             } else {
