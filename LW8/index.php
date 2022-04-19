@@ -92,7 +92,7 @@
 			</div>
 		</div>
 
-		<?php include 'form.php'; ?>
+		<?php include 'src/form.php'; ?>
 	</div>
 	<div class="footer">
 		<img class="footer__logo logo" src="img/footerlogo.svg" alt="image">			

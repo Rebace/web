@@ -621,3 +621,45 @@ select
 {
     border-radius: 20px;
 }
+
+.survey-request
+{
+    margin: 52px 59px;
+}
+
+.request-cell
+{
+    padding: 22px 27px 22px 28px;
+    background: #FFFFFF;
+    border: 1.35px solid #C0C0C0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 480px;
+    height: 64px;
+    font: normal 500 18px/1.2 'Montserrat';
+}
+
+.survey-request__button
+{
+    width: 480px;
+    background: #000;
+    border-radius: 5.39px;
+    color: #fff; 
+    margin-left: 49px;
+}
+
+.survey-viewer
+{
+    margin: 68px 59px;
+    font: normal 400 18px/1.35 'Roboto Condensed';
+}
+
+.survey-viewer p
+{
+    margin: 0;
+}
+
+select
+{
+    border-radius: 50%;
+}

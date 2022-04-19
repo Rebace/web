@@ -23,7 +23,7 @@ if (empty($email))
 	die();
 }
 
-$file = "data/" . $email . ".txt";
+$file = "../data/" . $email . ".txt";
 
 if (file_exists($file))
 {
