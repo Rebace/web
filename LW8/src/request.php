@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="survey-request">
-		<form action="view_survey.php">
+		<form action="view_survey.php" method="post">
 			<input class="survey-request__email request-cell" type="email" placeholder="Email" name="email">
 			<input class="survey-request__button request-cell" type="submit" value="Получить данные">
 		</form>

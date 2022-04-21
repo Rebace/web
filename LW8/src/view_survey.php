@@ -1,24 +1,25 @@
 <?php
 
-function getGetParameter(string $name): ?string
+function getPostParameter(string $name): ?string
 {
-    return isset($_GET[$name]) ? $_GET[$name] : null;
+    return isset($_POST[$name]) ? $_POST[$name] : null;
 }
 
-$email = getGetParameter('email');
+$email = getPostParameter('email');
 
 if (empty($email))
 {
+    echo 'Введите email';
 	die();
 }
 
 $file = '../data/' . $email . '.txt';
-if ((!(empty($email))) and (file_exists($file)))
+if (file_exists($file))
 {
     $tempArray = file($file);
     for ($i = 0; $i < 3; $i++)
     {
-        echo "$tempArray[$i] <br />";
+        echo "<div> $tempArray[$i] </div>";
     }
 }
 else
