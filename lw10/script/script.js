@@ -1,18 +1,20 @@
-const buttonformon = document.getElementsByClassName('button-open-form'),
-    buttonformnoff = document.getElementsByClassName('buttonformnoff'),
+const formOnElement = document.querySelectorAll('.open-form'),
+    formOffElement = document.querySelectorAll('.close-form'),
     form = document.querySelector('.main__questionnaire'),
     bgform = document.querySelector('.popup');
 
-[].forEach.call(buttonformon, function (el) {
+formOnElement.forEach(function(el) 
+    {
         el.addEventListener('click', () => {
-        const id = requestAnimationFrame(popupOn);
-        cancelAnimationFrame(id);
-        return requestAnimationFrame(popupOn);
-    })
-});
+            const id = requestAnimationFrame(popupOn);
+            cancelAnimationFrame(id);
+            return requestAnimationFrame(popupOn);
+        })
+    });
 
-[].forEach.call(buttonformnoff, function (el) {
-        el.addEventListener('click', () => {
+formOffElement.forEach(function(el) 
+{
+    el.addEventListener('click', () => {
         const id = requestAnimationFrame(popupOff);
         cancelAnimationFrame(id);
         return requestAnimationFrame(popupOff);
@@ -20,12 +22,11 @@ const buttonformon = document.getElementsByClassName('button-open-form'),
 });
 
 document.onkeydown = 
-    function logKey(e) {
-        if (e.code == "Escape") {
+    function (key) {
+        if (key.code == "Escape") {
             popupOff();
         }
     };
-
 
 function popupOn() {
     form.classList.add('popup_form-on');

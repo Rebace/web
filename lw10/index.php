@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="popup buttonnoff"></div>
+	<div class="popup close-form"></div>
 	<?php include 'src/form.php'; ?>
 
   	<div class="header">
@@ -17,7 +17,7 @@
 				<a href="#" class="header__link">Что будет на курсе?</a>
 				<a href="#" class="header__link">Вопросы</a>
 				<a href="#" class="header__link">Автор</a>
-				<a href="#" class="header__link header__button button button-open-form">Записаться на курс</a>
+				<a href="#" class="header__link header__button button open-form">Записаться на курс</a>
 			</nav>
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 			<div class="blog__info">
 				<div class="blog__title">Не <span class="extra">делай</span> это</div>
 				<div class="blog__subtitle">Онлайн-курс для творческих людей, о том, как управлять своим временем </div>
-				<a href="#" class="button_wider button button-open-form">Записаться на курс</a>
+				<a href="#" class="button_wider button open-form">Записаться на курс</a>
 			</div>
 			<img class="main__img" src="img/blog.png" alt="image">
 		</div>

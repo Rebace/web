@@ -16,5 +16,5 @@
             <input class="form__button" type="submit" value="Записаться на курс">
         </form>
     </div>
-    <img class="questionnaire__close buttonformnoff" src="img/vector.svg" alt="Закрыть">
+    <img class="questionnaire__close close-form" src="img/vector.svg" alt="Закрыть">
 </div>
