@@ -15,7 +15,7 @@ CREATE TABLE class
 (
 	id 				INT AUTO_INCREMENT 	NOT NULL,
 	name 			VARCHAR(255)		NOT NULL,
-    faculty_id		INT,
+    faculty_id		INT					NOT NULL,
     FOREIGN KEY (faculty_id) REFERENCES faculty(id),
 	PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4
@@ -30,7 +30,7 @@ CREATE TABLE student
     name 			VARCHAR(255)		NOT NULL,
     patronymic		VARCHAR(255)		NOT NULL,
     age				INT					NOT NULL,
-    class_id		INT,
+    class_id		INT					NOT NULL,
     FOREIGN KEY (class_id) REFERENCES class(id),
 	PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4

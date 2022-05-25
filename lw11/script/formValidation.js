@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () =>
         elementActivity = document.querySelector('.form__activity'),
         elementAgreement = document.querySelector('.form__checkbox');
 
-        form.addEventListener('submit', (event) => 
+        form.addEventListener('submit', async (event) => 
         {
             elementName.classList.remove('input_error');
             elementEmail.classList.remove('input_error');
@@ -38,35 +38,28 @@ window.addEventListener('DOMContentLoaded', () =>
                 const user = 
                 {
                     email: elementEmail.value, 
-                    firstName: elementName.value,
+                    name: elementName.value,
                     activity: elementActivity.value,
                     agreement: elementAgreement.checked == 1 ? 'on' : 'off'
                 };
-                const response = fetch('./src/UserSurvey.php', 
+                const response = await fetch('./src/UserSurvey.php', 
                     {
                         method: 'POST',
-                        headers: 
-                        {
-                            'Content-Type': 'application/json; charset=utf-8'
-                        },
                         body: JSON.stringify(user)
                     }                        
                 )
-                .then(response => 
-                    {
-                        console.log(response.status);
-                        if (response.ok) 
-                        {
-                            window.location.reload();                                
-                        } 
-                        else 
-                        {
-                            popupError();
-                            console.log(`Error status: ${response.status}`);
-                            console.log(`Message: ${response.statusText}`);
-                        }
-                    }
-                );
+                const result = await response.json();
+
+                console.log(result);
+            
+                if (result.status == 500) 
+                {
+                    popupError();
+                } 
+                else 
+                {
+                    window.location.reload();
+                }
             }
         }
     );

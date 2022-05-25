@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Лаба 10</title>
+	<title>Лаба 11</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
@@ -14,10 +14,10 @@
 		<div class="header__content">
 			<img class="header__logo logo" src="img/headerlogo.svg" alt="image">
 			<nav class="header__menu">
-				<a href="#" class="header__link">Что будет на курсе?</a>
-				<a href="#" class="header__link">Вопросы</a>
-				<a href="#" class="header__link">Автор</a>
-				<a href="#" class="header__link header__button button open-form">Записаться на курс</a>
+				<a class="header__link">Что будет на курсе?</a>
+				<a class="header__link">Вопросы</a>
+				<a class="header__link">Автор</a>
+				<a class="header__link header__button button open-form">Записаться на курс</a>
 			</nav>
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 			<div class="blog__info">
 				<div class="blog__title">Не <span class="extra">делай</span> это</div>
 				<div class="blog__subtitle">Онлайн-курс для творческих людей, о том, как управлять своим временем </div>
-				<a href="#" class="button_wider button open-form">Записаться на курс</a>
+				<a class="button_wider button open-form">Записаться на курс</a>
 			</div>
 			<img class="main__img" src="img/blog.png" alt="image">
 		</div>
