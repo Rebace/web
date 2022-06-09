@@ -1,0 +1,4 @@
+Name: Misha
+Email: Misha@mail.ru
+Activity: Маркетолог
+Agreement: Yes

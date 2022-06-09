@@ -1,19 +1,26 @@
 <?php
+
 class RequestSurveyLoader
 {
-    public function load(): Survey
+    private const POST_EMAIL = "email";
+    private const POST_FIRST_NAME = "first_name";
+    private const POST_ACTIVITY = "activity";    
+    private const POST_AGREEMENT = "agreement";
+
+    public function createSurveyInfo(): ?Survey
     {
-        header('Content-type: application/json');
+        $inputJSON = file_get_contents('php://input');
+        $input = json_decode($inputJSON, true);
 
-        $objJSON = file_get_contents('php://input');
-        $request = json_decode($objJSON, true);
+        if (!$input[self::POST_EMAIL]) 
+        {
+            return null;
+        }
+        $email = $input[self::POST_EMAIL];
+        $firstName = $input[self::POST_FIRST_NAME] ?? null;
+        $activity = $input[self::POST_ACTIVITY] ?? null;   
+        $agreement = $input[self::POST_AGREEMENT] ?? null;
 
-        $email = $request['email'];
-        $name = $request['name'];
-        $activity = $request['activity'];
-        $agreement = $request['agreement'];
-
-        
-        return new Survey($email, $name, $activity, $agreement);
+        return new Survey($email, $firstName, $activity, $agreement);
     }
 }

@@ -1,27 +1,27 @@
 const buttonForm = document.querySelector('.survey-request__button');
 
-buttonForm.addEventListener('click', () => 
+buttonForm.addEventListener('click', async () => 
 {
     if (document.querySelector('.users__data')) 
     {
         return;
     }
 
-    const result = getUsers();
-    document.querySelector('.survey-request').appendChild(result);
-    // result.forEach(userdata => 
-    // {
-    //     const newUser = document.createElement('div');
-    //     const newUserText = document.createElement('p');
-    //     newUserText.innerHTML = userdata.replaceAll('\n', '<br>');
-    //     const newUserIcon = document.createElement('img');
-    //     newUserIcon.src = 'img/user.png';
-    //     newUser.appendChild(newUserIcon);
-    //     newUser.appendChild(newUserText);
+    const result = await getUsers();
+    
+    result.forEach(userdata => 
+    {
+        const newUser = document.createElement('div');
+        const newUserText = document.createElement('p');
+        newUserText.innerHTML = userdata.replaceAll('\n', '<br>');
+        const newUserIcon = document.createElement('img');
+        newUserIcon.src = 'img/user.png';
+        newUser.appendChild(newUserIcon);
+        newUser.appendChild(newUserText);
         
-    //     newUser.classList.add('users__data');
-    //     document.querySelector('.survey-request').appendChild(newUser);
-    // });
+        newUser.classList.add('users__data');
+        document.querySelector('.survey-request').appendChild(newUser);
+    });
       
     if (!document.querySelector('.users__data')) 
     {
@@ -32,7 +32,7 @@ buttonForm.addEventListener('click', () =>
 });
 
 async function getUsers(){
-    const response = await fetch('./src/findFiles.php');
-    const result = await response.json();
+    let response = await fetch('./src/findFiles.php');
+    let result = await response.json();
     return result;
 }
